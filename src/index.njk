@@ -1,0 +1,44 @@
+---
+title: My homepage
+layout: 'base.njk'
+---
+  
+  
+ 
+      
+<section class="hero">
+  <div class="container flow">
+      <div class="hero__content flow">
+        <h1 class="section-title">Bienvenido al mi página</h1>
+        <p>Uso este espacio como una guía propia,o una mera expansión de mis letras en dirección al mundo, por lo que puedes encontrar simples tips o consejos, reviews referentes a SEO y marketing de afiliados o algún enlace con algún descuento en alguna plataforma concreta.  </p>
+        <p>Puedes simplemente sentarte y leer o intentar seguir los pasos a modo de tutorial. Hagas lo que hagas, quedate contento contigo mismo.</p>
+        <div class="flex-group">
+          <a href="#featured-articles" class="btn btn--primary">Artículos destacados</a>
+          <a href="./blog" class="btn btn--neutral">Artículos recientes</a>
+        </div>
+      </div>
+      <div>
+        <img src="//unsplash.it/510" alt="" class="hero__image">
+      </div>
+  </div>
+</section>
+
+<section id="featured-articles" class="featured-articles">
+  <div class="container flow">
+    <h2 class="section-title text-center ">Últimas entradas</h2>
+    <p class="text-center">El contenido más reciente ordenado por orden descendente de la fecha de su publicación.</p>
+    
+
+<ul role="list" class="articles__list flow">
+
+  {%- for post in collections.featured | reverse -%}
+    {% include 'article-snippet.njk' %}
+  {%- endfor %}
+
+</ul>
+
+  </div>
+</section> 
+    
+
+ 
